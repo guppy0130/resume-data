@@ -1,0 +1,27 @@
+---
+experience:
+  - name: "Jump Trading"
+    position: "TechOps Engineer"
+    dates:
+      start: 2020
+      end: "Present"
+    description: >-
+      The TechOps Engineer will work with traders, operations, exchanges, and
+      developers to optimize the trading environment and investigate and solve
+      system issues.
+  - name: "University of California, Berkeley"
+    position: "Lead Unix Operations Engineer, Lead Windows Sysadmin"
+    dates:
+      start: 2018
+      end: 2020
+    description: >-
+      Maintain integrity/security of Unix servers that support over 8000 student
+      residents and business systems.
+  - name: "Personal server"
+    dates:
+      start: 2017
+      end: Present
+    description: >-
+      Create/maintain a N-node cluster Proxmox server that runs a variety of
+      services: Grafana, Rockstor, Pihole, Gollum, Ghost, Plex, Ansible,
+      Gitlab/K8s, Docker, Bitwarden

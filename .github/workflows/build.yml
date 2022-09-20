@@ -1,0 +1,43 @@
+---
+name: "build"
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  test:
+    name: "Build resume on node ${{ matrix.node_version }}"
+    runs-on: "${{ matrix.os }}"
+    strategy:
+      matrix:
+        node_version:
+          - 16
+        os:
+          - "ubuntu-latest"
+    steps:
+      - name: "checkout resume-generator"
+        uses: "actions/checkout@v3"
+        with:
+          repository: "guppy0130/resume-generator"
+      - name: "checkout self"
+        uses: "actions/checkout@v3"
+        with:
+          path: "resume-data"
+      - name: "Use Node.js ${{ matrix.node_version }}"
+        uses: "actions/setup-node@v3"
+        with:
+          node-version: "${{ matrix.node_version }}"
+      - name: "install node dependencies"
+        run: "npm ci"
+      - name: "dump dummy pfp"
+        run: "echo '' > resume-data/img.jpg"
+      - name: "build resume"
+        run: "npx ts-node index.ts -d resume-data -t templates/guppy0130 -o resume.pdf"
+      - name: "release"
+        uses: "softprops/action-gh-release@v1"
+        with:
+          draft: true
+          files: |
+            resume.pdf

@@ -1,0 +1,14 @@
+---
+projects:
+  - name: "rockon-registry"
+    url: "github.com/guppy0130/rockon-registry"
+    positions:
+      - "Systems Administrator"
+  - name: "markrust"
+    url: "github.com/guppy0130/markrust"
+    positions:
+      - "Systems Administrator"
+  - name: "ansible"
+    url: "github.com/homielabs/ansible"
+    positions:
+      - "Systems Administrator"
