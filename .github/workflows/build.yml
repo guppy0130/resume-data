@@ -38,6 +38,7 @@ jobs:
       - name: "Upload artifacts"
         uses: "actions/upload-artifact@v4"
         with:
+          name: "resume-${{ matrix.position }}"
           if-no-files-found: "error"
           path: |
             *.pdf
