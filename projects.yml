@@ -1,14 +1,16 @@
 ---
 projects:
-  - name: "rockon-registry"
-    url: "github.com/guppy0130/rockon-registry"
+  - name: "kubernetes"
+    url: "github.com/guppy0130/kubernetes"
     positions:
       - "Systems Administrator"
-  - name: "markrust"
-    url: "github.com/guppy0130/markrust"
+      - "DevOps Engineer"
+  - name: "kubectl-quadlet"
+    url: "github.com/guppy0130/kubectl-quadlet"
     positions:
       - "Systems Administrator"
-  - name: "ansible"
-    url: "github.com/homielabs/ansible"
+      - "DevOps Engineer"
+  - name: "modem-scraper"
+    url: "github.com/guppy0130/modem-scraper"
     positions:
-      - "Systems Administrator"
+      - "DevOps Engineer"

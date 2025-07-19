@@ -17,11 +17,13 @@ experience:
     description: >-
       Maintain integrity/security of Unix servers that support over 8000 student
       residents and business systems.
-  - name: "Personal server"
+  - name: "Homelab"
     dates:
       start: 2017
       end: Present
     description: >-
-      Create/maintain a N-node cluster Proxmox server that runs a variety of
-      services: Grafana, Rockstor, Pihole, Gollum, Ghost, Plex, Ansible,
-      Gitlab/K8s, Docker, Bitwarden
+      Create/maintain a N-node Proxmox and kubernetes cluster that runs a
+      variety of services for family and friends. Distributed storage provided
+      by Ceph. kubectl-quadlet allows me to use the same k8s config structure
+      and definition to target systemd+podman-based deployments, reducing
+      deployment friction.

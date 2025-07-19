@@ -1,9 +1,11 @@
 ---
 skills:
-  - name: "VMWare ESXi/Proxmox/Rockstor"
-  - name: "Docker/LXC/Podman/Buildah/Jenkins"
-  - name: "Puppet/Ansible"
-  - name: "Javascript/Python/Scheme/SQL/Java/Arduino/C/Rust"
+  - name: "VMWare ESXi/Proxmox"
+  - name: "Docker/LXC/Podman/Buildah/Kubernetes"
+  - name: "Ansible/Terraform"
+  - name: "Python/Rust/Javascript/Typescript/SQL/Java/Arduino/C"
   - name: "Using Google/StackOverflow"
   - name: "Illustrator/Photoshop/Adobe XD"
+    positions:
+      - "Full-stack Engineer"
   - name: "Microsoft Office"

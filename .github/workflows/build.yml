@@ -1,43 +1,63 @@
 ---
 name: "build"
 
-on:
-  push:
-    tags:
-      - "v*.*.*"
+on: push
 
 jobs:
-  test:
-    name: "Build resume on node ${{ matrix.node_version }}"
-    runs-on: "${{ matrix.os }}"
+  build-resume:
+    name: "Build resume"
+    runs-on: "ubuntu-latest"
     strategy:
       matrix:
-        node_version:
-          - 16
-        os:
-          - "ubuntu-latest"
+        position:
+          - "Systems Administrator"
+          - "DevOps Engineer"
+          - "Full-stack Engineer"
     steps:
       - name: "checkout resume-generator"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           repository: "guppy0130/resume-generator"
       - name: "checkout self"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           path: "resume-data"
-      - name: "Use Node.js ${{ matrix.node_version }}"
-        uses: "actions/setup-node@v3"
+      - uses: "oven-sh/setup-bun@v2"
         with:
-          node-version: "${{ matrix.node_version }}"
-      - name: "install node dependencies"
-        run: "npm ci"
-      - name: "dump dummy pfp"
-        run: "echo '' > resume-data/img.jpg"
-      - name: "build resume"
-        run: "npx ts-node index.ts -d resume-data -t templates/guppy0130 -o resume.pdf"
+          bun-version: "latest"
+      - run: "bun install"
+      - name: "fetch pfp"
+        run: "curl -fsSL https://github.com/guppy0130.png -o resume-data/img.jpg"
+      - name: "build resume for ${{ matrix.position }}"
+        run: |-
+          bun run index.ts \
+            -d resume-data \
+            -t templates/guppy0130 \
+            -o "resume-${{ matrix.position }}.pdf" \
+            -p "${{ matrix.position }}"
+      - name: "Upload artifacts"
+        uses: "actions/upload-artifact@v4"
+        with:
+          if-no-files-found: "error"
+          path: |
+            *.pdf
+
+  release-resume:
+    needs:
+      - "build-resume"
+    permissions:
+      id-token: write
+      attestations: write
+    name: "release resume"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/download-artifact@v4"
+      - uses: "actions/attest-build-provenance@v2"
+        with:
+          subject-path: "*.pdf"
       - name: "release"
-        uses: "softprops/action-gh-release@v1"
+        uses: "softprops/action-gh-release@v2"
         with:
           draft: true
           files: |
-            resume.pdf
+            *.pdf

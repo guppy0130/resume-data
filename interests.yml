@@ -1,22 +1,23 @@
 ---
 interests:
-  - name: "kubernetes"
+  - name: "k8s"
     positions:
       - "Systems Administrator"
       - "DevOps Engineer"
   - name: "web design"
     positions:
       - "Systems Administrator"
-      - "DevOps Engineer"
+      - "Full-stack Engineer"
   - name: "sysadmin work"
     positions:
       - "Systems Administrator"
-      - "DevOps Engineer"
-  - name: "IoT"
+  - name: "devops work"
     positions:
-      - "Systems Administrator"
       - "DevOps Engineer"
-  - name: "photography"
+  - name: "full-stack work"
+    positions:
+      - "Full-stack engineer"
+  - name: "IoT"
     positions:
       - "Systems Administrator"
       - "DevOps Engineer"
