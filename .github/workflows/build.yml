@@ -6,7 +6,7 @@ on: push
 jobs:
   build-resume:
     name: "Build resume"
-    runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-22.04"  # https://github.com/puppeteer/puppeteer/issues/12818
     strategy:
       matrix:
         position:
