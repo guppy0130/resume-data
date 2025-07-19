@@ -48,6 +48,7 @@ jobs:
       - "build-resume"
     permissions:
       id-token: write
+      contents: write
       attestations: write
     name: "release resume"
     runs-on: "ubuntu-latest"
