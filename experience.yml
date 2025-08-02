@@ -22,8 +22,6 @@ experience:
       start: 2017
       end: Present
     description: >-
-      Create/maintain a N-node Proxmox and kubernetes cluster that runs a
+      Create/maintain a 3-node Proxmox and kubernetes cluster that runs a
       variety of services for family and friends. Distributed storage provided
-      by Ceph. kubectl-quadlet allows me to use the same k8s config structure
-      and definition to target systemd+podman-based deployments, reducing
-      deployment friction.
+      by Ceph. Routing provided by VyOS.

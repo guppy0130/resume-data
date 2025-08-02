@@ -2,15 +2,25 @@
 projects:
   - name: "kubernetes"
     url: "github.com/guppy0130/kubernetes"
+    description: >-
+      Kubernetes configs for the cluster at home.
     positions:
       - "Systems Administrator"
       - "DevOps Engineer"
   - name: "kubectl-quadlet"
     url: "github.com/guppy0130/kubectl-quadlet"
+    description: >-
+      Generates quadlet-compatible units from kubernetes/kustomize manifests, so
+      that users can reuse existing config structures but target different
+      environments/runtimes.
     positions:
       - "Systems Administrator"
       - "DevOps Engineer"
   - name: "modem-scraper"
     url: "github.com/guppy0130/modem-scraper"
+    description: >-
+      Fetches logs and metrics (signal strength, retransmits, etc.) from a SOAP
+      endpoint. Write metrics to telegraf, logs to loki, and sends OTEL traces
+      for the actions it's undertaking.
     positions:
       - "DevOps Engineer"

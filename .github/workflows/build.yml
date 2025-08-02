@@ -35,7 +35,7 @@ jobs:
         run: |-
           bun run index.ts \
             -d resume-data \
-            -t templates/guppy0130 \
+            -t templates/jakes \
             -o "resume-${{ matrix.position }}.pdf" \
             -p "${{ matrix.position }}"
       - name: "Upload artifacts"
